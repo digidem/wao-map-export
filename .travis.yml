@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '6'
+
+before_install:
+  - export PATH=$PATH:$HOME/.local/bin
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+install:
+  - npm install -g mapbox-map-image-export
+  - curl -L https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download -o $HOME/.local/bin/gdrive
+  - chmod u+x $HOME/.local/bin/gdrive
+
+script:
+  - ./export_maps.sh
