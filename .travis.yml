@@ -9,7 +9,7 @@ before_install:
 
 install:
   - npm install -g mapbox-map-image-export
-  - curl -L https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download -o $HOME/.local/bin/gdrive
+  - curl -o $HOME/.local/bin/gdrive -L "https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download"
   - chmod u+x $HOME/.local/bin/gdrive
 
 script:
