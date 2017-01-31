@@ -1,0 +1,16 @@
+machine:
+  pre:
+    - export PATH=$PATH:$HOME/.local/bin
+    - mkdir -p $HOME/.local/bin
+  node:
+    version: 6
+
+dependencies:
+  override:
+    - npm install -g mapbox-map-image-export
+    - curl -o $HOME/.local/bin/gdrive -L "https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download"
+    - chmod u+x $HOME/.local/bin/gdrive
+
+test:
+  override:
+    - ./export_maps.sh
